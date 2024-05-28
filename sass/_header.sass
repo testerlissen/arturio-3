@@ -1,0 +1,38 @@
+.header
+    position: fixed
+    z-index: 10
+    width: 75%
+    left: 50%
+    transform: translateX(-50%)
+    mix-blend-mode: difference
+
+.navigation
+    width: 100%
+    &__list
+        display: flex
+        justify-content: space-between
+        list-style-type: none
+    &__item
+        margin-top: 1.5rem
+    &__link
+        position: relative
+        display: inline-block
+        text-decoration: none
+        color: white
+        font-family: "Inter-light"
+        font-size: 2rem
+        &::after
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: .1rem
+            background: white
+            border-radius: 4rem
+            transform: scaleX(0)
+            transform-origin: right
+            transition: transform .3s
+        &:hover::after
+            transform-origin: left
+            transform: scaleX(1)
